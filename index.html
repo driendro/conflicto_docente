@@ -1187,6 +1187,114 @@ Fuentes: IEC-CONADU / CEPA / Chequeado. Cargo ref.: JTP dedicación semiexclusiv
 🟠 Mínimo post-2002  |  🟢 Pico 2015–2017  |  🔴 2024–2026: niveles de 2005, con tendencia a la baja
 </p>
 </section>
+<section id="el-sistema-universitario-al-límite" class="slide level2" data-background-color="#1a1a2e">
+<h2>El sistema universitario al límite</h2>
+<div style="overflow-y:auto;max-height:580px;padding-right:0.5em">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2em;margin-top:0.5em">
+<div style="background:#2a0d0d;border-left:5px solid #cc2200;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.8em;font-weight:900;color:#cc2200">−45,6%</span><br> <strong style="color:white">de caída real en transferencias</strong><br> <span style="color:#aaa;font-size:0.8em">Reducción inédita de los recursos disponibles para el sistema universitario entre 2023 y 2026.</span></p>
+</div>
+<div style="background:#2a0d0d;border-left:5px solid #cc2200;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.8em;font-weight:900;color:#cc2200">−95%</span><br> <strong style="color:white">de inversión real en Becas Progresar</strong><br> <span style="color:#aaa;font-size:0.8em">El financiamiento para trayectorias estudiantiles se desplomó casi en su totalidad respecto a 2023.</span></p>
+</div>
+<div style="background:#0d1f2a;border-left:5px solid #4a9eda;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.8em;font-weight:900;color:#4a9eda">−40%</span><br> <strong style="color:white">gastos de funcionamiento</strong><br> <span style="color:#aaa;font-size:0.8em">Las universidades operan con menos de la mitad del presupuesto que tenían en enero de 2023.</span></p>
+</div>
+<div style="background:#0d1f2a;border-left:5px solid #4a9eda;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.8em;font-weight:900;color:#4a9eda">0%</span><br> <strong style="color:white">presupuesto para infraestructura</strong><br> <span style="color:#aaa;font-size:0.8em">Las partidas para obras y desarrollo de infraestructura universitaria están totalmente paralizadas.</span></p>
+</div>
+</div>
+<div style="margin-top:1.2em">
+<p style="color:#aaa;font-size:0.85em;margin-bottom:0.5em">
+<strong style="color:white">Ejecución presupuestaria 2025 vs. 2023 — áreas clave:</strong>
+</p>
+<canvas id="chart-areas" style="max-height:160px;"></canvas>
+<script>
+new Chart(document.getElementById('chart-areas'), {
+  type: 'bar',
+  data: {
+    labels: ['Ciencia y Técnica', 'Becas Progresar', 'Extensión Universitaria'],
+    datasets: [{
+      label: '% ejecutado vs 2023',
+      data: [38.05, 26.02, 1.02],
+      backgroundColor: ['rgba(74,158,218,0.8)','rgba(243,156,18,0.8)','rgba(204,34,0,0.8)'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    indexAxis: 'y',
+    plugins: { legend: { display: false } },
+    scales: {
+      x: {
+        min: 0, max: 100,
+        ticks: { color: '#aaa', callback: v => v + '%' },
+        grid: { color: '#2a2a3a' }
+      },
+      y: { ticks: { color: '#ccc', font: { size: 12 } }, grid: { display: false } }
+    }
+  }
+});
+</script>
+</div>
+</div>
+</section>
+<section id="el-deterioro-salarial-en-cifras" class="slide level2" data-background-color="#1a1a2e">
+<h2>El deterioro salarial en cifras</h2>
+<div style="overflow-y:auto;max-height:580px;padding-right:0.5em">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin-top:0.5em">
+<div style="display:flex;flex-direction:column;gap:1em">
+<div style="background:#2a0d0d;border-left:5px solid #cc2200;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.5em;font-weight:900;color:#cc2200">−32%</span><br> <strong style="color:white">pérdida del poder adquisitivo</strong><br> <span style="color:#aaa;font-size:0.8em">Los salarios subieron 158% frente a una inflación acumulada del 280%.</span></p>
+</div>
+<div style="background:#2a0d0d;border-left:5px solid #cc2200;padding:1.2em;border-radius:4px">
+<p><span style="font-size:2.5em;font-weight:900;color:#cc2200">7,3</span><br> <strong style="color:white">sueldos mensuales perdidos</strong><br> <span style="color:#aaa;font-size:0.8em">El deterioro acumulado desde noviembre 2023 equivale a perder siete salarios completos.</span></p>
+</div>
+<div style="background:#0d1f2a;border-left:5px solid #f39c12;padding:1.2em;border-radius:4px">
+<p><span style="font-size:1.1em;font-weight:700;color:#f39c12">Nivel más bajo en 23 años</span><br> <span style="color:#aaa;font-size:0.8em">Los salarios universitarios retrocedieron a niveles críticos históricos desde el retorno democrático.</span></p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:1em">
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:4px">
+<p style="color:#aaa;font-size:0.8em;margin:0 0 0.8em 0">
+<strong style="color:white">Salarios vs. Inflación acumulada</strong>
+</p>
+<canvas id="chart-inflacion" style="max-height:160px;"></canvas>
+<script>
+new Chart(document.getElementById('chart-inflacion'), {
+  type: 'bar',
+  data: {
+    labels: ['Salarios +158%', 'Inflación +280%'],
+    datasets: [{
+      data: [158, 280],
+      backgroundColor: ['rgba(74,158,218,0.8)', 'rgba(204,34,0,0.8)'],
+      borderRadius: 4
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { ticks: { color: '#ccc', font: { size: 12 } }, grid: { display: false } },
+      y: {
+        ticks: { color: '#aaa', callback: v => v + '%' },
+        grid: { color: '#2a2a3a' }
+      }
+    }
+  }
+});
+</script>
+</div>
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:4px">
+<p style="color:#aaa;font-size:0.8em;margin:0 0 0.5em 0">
+<strong style="color:white">Operatividad universitaria reducida al 40%</strong>
+</p>
+<p style="color:#aaa;font-size:0.8em;margin:0">
+Los gastos de funcionamiento perdieron el equivalente a 9 meses de transferencias. Becas e infraestructura: nivel cero.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="la-crisis-en-la-utn" class="slide level2" data-background-color="#1a1a2e">
 <h2>La crisis en la UTN</h2>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin-top:0.5em">
