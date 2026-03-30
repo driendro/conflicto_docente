@@ -1,0 +1,333 @@
+---
+title: "Conflicto Docente 2026"
+subtitle: "Por qué me adhiero a los paros"
+author: "UTN-FRLP"
+date: "Marzo 2026"
+format:
+  revealjs:
+    theme: default
+    slide-number: true
+    transition: fade
+    background-transition: fade
+    footer: "Conflicto Docente Argentina 2026 · UTN-FRLP"
+    width: 1280
+    height: 720
+    margin: 0.05
+    embed-resources: true
+    controls: true
+    controls-layout: bottom-right
+    scrollable: true
+lang: es
+---
+
+## {background-image="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&q=80" background-size="cover" background-opacity="0.25" background-color="#1a1a2e"}
+
+<div style="display:flex;flex-direction:column;justify-content:center;height:600px;padding:2em">
+<p style="color:#aaa;font-size:0.8em;letter-spacing:0.2em;text-transform:uppercase">ARGENTINA · 2026</p>
+<h1 style="color:white;font-size:2.2em;margin:0.2em 0">Conflicto Docente</h1>
+<p style="color:#4a9eda;font-size:1.2em">Por qué me adhiero a los paros</p>
+<p style="color:#888;font-size:0.9em;margin-top:1em">UTN · Facultad Regional La Plata</p>
+</div>
+
+---
+
+## ¿De qué estamos hablando? {background-color="#1a1a2e"}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2em;margin-top:1em">
+<div>
+<h3 style="color:#4a9eda">Nivel inicial / primario / secundario</h3>
+<p>CTERA, UDA, CEA, FUDB<br>Paros desde el primer día de clases</p>
+
+<h3 style="color:#cc2200;margin-top:1em">Nivel universitario</h3>
+<p>CONADU, FAGDUT<br>Paro semana 16–21 de marzo<br><strong style="color:white">Paro 30/3 al 1/4 — esta semana</strong></p>
+</div>
+<div style="display:flex;flex-direction:column;gap:1em">
+<div style="background:#0d2a4a;border-left:4px solid #4a9eda;padding:1em;border-radius:4px">
+<span style="font-size:2.5em;font-weight:900;color:#4a9eda">19</span><br>
+<span style="color:#aaa;font-size:0.85em">de 24 jurisdicciones con protestas o paros activos</span>
+</div>
+<div style="background:#2a0d0d;border-left:4px solid #cc2200;padding:1em;border-radius:4px">
+<span style="font-size:2.5em;font-weight:900;color:#cc2200">+3</span><br>
+<span style="color:#aaa;font-size:0.85em">paros nacionales universitarios desde el inicio del ciclo lectivo</span>
+</div>
+</div>
+</div>
+
+---
+
+## Inversión universitaria como % del PBI {background-color="#1a1a2e"}
+```{=html}
+<canvas id="chart-pbi" style="max-height:400px;"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+new Chart(document.getElementById('chart-pbi'), {
+  type: 'bar',
+  data: {
+    labels: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+    datasets: [{
+      label: '% del PBI destinado a universidades nacionales',
+      data: [0.68,0.67,0.55,0.58,0.62,0.66,0.70,0.74,0.77,0.79,0.80,0.80,0.81,0.87,0.85,0.87,0.82,0.87,0.79,0.68,0.75,0.74,0.76,0.87,0.49,0.47,0.43],
+      backgroundColor: (ctx) => {
+        const i = ctx.dataIndex;
+        if (i >= 24) return 'rgba(204,34,0,0.85)';
+        if (i === 23) return 'rgba(243,156,18,0.85)';
+        if (i === 15 || i === 17) return 'rgba(39,174,96,0.75)';
+        return 'rgba(74,158,218,0.75)';
+      },
+      borderColor: (ctx) => {
+        const i = ctx.dataIndex;
+        if (i >= 24) return '#cc2200';
+        if (i === 23) return '#f39c12';
+        if (i === 15 || i === 17) return '#27ae60';
+        return '#4a9eda';
+      },
+      borderWidth: 1.5,
+      borderRadius: 3,
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { labels: { color: '#ccc', font: { size: 11 } } },
+      tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(2) + '% del PBI' } }
+    },
+    scales: {
+      x: { ticks: { color: '#aaa', font: { size: 10 }, maxRotation: 45 }, grid: { color: '#2a2a3a' } },
+      y: {
+        min: 0, max: 1.0,
+        ticks: { color: '#aaa', callback: val => val.toFixed(2) + '%' },
+        grid: { color: '#2a2a3a' },
+        title: { display: true, text: '% del PBI', color: '#888', font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+<p style="color:#888;font-size:0.52em;margin-top:0.3em">
+Fuentes: CEPA / eSidif / Banco Mundial.
+🟦 Serie histórica &nbsp;|&nbsp; 🟢 Pico 2015–2017 (0,87%) &nbsp;|&nbsp; 🟡 2023: último año razonable &nbsp;|&nbsp; 🔴 2024–2026: desplome — mínimo desde 2001
+</p>
+```
+
+---
+
+## Presupuesto universitario: caída en términos reales {background-color="#1a1a2e"}
+```{=html}
+<canvas id="chart-presupuesto" style="max-height:400px;"></canvas>
+<script>
+new Chart(document.getElementById('chart-presupuesto'), {
+  type: 'line',
+  data: {
+    labels: ['2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],
+    datasets: [{
+      label: 'Inversión universitaria real (2017 = 100)',
+      data: [58,57,42,44,48,54,60,67,72,74,78,80,82,87,85,95,91,100,87,72,64,71,76,87,57,54,50],
+      borderColor: '#4a9eda',
+      backgroundColor: 'rgba(74,158,218,0.10)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: [3,3,7,3,3,3,3,3,3,3,3,3,3,3,3,7,3,9,3,3,3,3,3,7,9,8,8],
+      pointBackgroundColor: [
+        '#666','#666','#cc6600','#666','#666','#666','#666','#666','#666','#666',
+        '#666','#666','#666','#666','#666','#27ae60','#666','#27ae60','#666','#666',
+        '#666','#666','#666','#f39c12','#cc2200','#cc2200','#cc2200'
+      ]
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { labels: { color: '#ccc', font: { size: 11 } } },
+      tooltip: { callbacks: { label: ctx => 'Índice: ' + ctx.parsed.y } }
+    },
+    scales: {
+      x: { ticks: { color: '#aaa', font: { size: 10 }, maxRotation: 45 }, grid: { color: '#2a2a3a' } },
+      y: {
+        min: 30, max: 115,
+        ticks: { color: '#aaa' },
+        grid: { color: '#2a2a3a' },
+        title: { display: true, text: 'Índice (2017 = 100)', color: '#888', font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+<p style="color:#888;font-size:0.52em;margin-top:0.3em">
+Fuentes: CEPA / eSidif / Banco Mundial. 🟠 Piso post-crisis 2002 &nbsp;|&nbsp; 🟢 Pico 2015–2017 &nbsp;|&nbsp; 🔴 2024–2026: por debajo del piso de 2002<br>
+Índice construido combinando % PBI × PBI real a precios constantes.
+</p>
+```
+
+---
+
+## Salario docente universitario: 25 años {background-color="#1a1a2e"}
+```{=html}
+<canvas id="chart-salario" style="max-height:400px;"></canvas>
+<script>
+new Chart(document.getElementById('chart-salario'), {
+  type: 'line',
+  data: {
+    labels: ['2000','2002','2004','2005','2007','2009','2011','2013','2015','2017','2019','2020','2021','2022','2023','2024','2025','2026'],
+    datasets: [{
+      label: 'Poder adquisitivo real (2017 = 100)',
+      data: [48,38,36,48,62,72,78,80,92,100,80,70,72,74,70,48,47,46],
+      borderColor: '#cc2200',
+      backgroundColor: 'rgba(204,34,0,0.10)',
+      fill: true,
+      tension: 0.4,
+      pointRadius: [4,7,4,4,4,4,4,4,6,9,4,4,4,4,4,9,8,8],
+      pointBackgroundColor: [
+        '#666','#cc6600','#666','#666','#666','#666','#666','#666',
+        '#27ae60','#27ae60','#666','#666','#666','#666','#f39c12',
+        '#cc2200','#cc2200','#cc2200'
+      ]
+    }]
+  },
+  options: {
+    plugins: {
+      legend: { labels: { color: '#ccc', font: { size: 11 } } },
+      tooltip: { callbacks: { label: ctx => 'Índice: ' + ctx.parsed.y } }
+    },
+    scales: {
+      x: { ticks: { color: '#aaa', font: { size: 10 }, maxRotation: 45 }, grid: { color: '#2a2a3a' } },
+      y: {
+        min: 25, max: 115,
+        ticks: { color: '#aaa' },
+        grid: { color: '#2a2a3a' },
+        title: { display: true, text: 'Poder adquisitivo (2017 = 100)', color: '#888', font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
+<p style="color:#888;font-size:0.52em;margin-top:0.3em">
+Fuentes: IEC-CONADU / CEPA / Chequeado. Cargo ref.: JTP dedicación semiexclusiva.<br>
+🟠 Mínimo post-2002 &nbsp;|&nbsp; 🟢 Pico 2015–2017 &nbsp;|&nbsp; 🔴 2024–2026: niveles de 2005, con tendencia a la baja
+</p>
+```
+
+---
+
+## La crisis en la UTN {background-color="#1a1a2e"}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5em;margin-top:0.5em">
+<div style="background:#2a0d0d;border-left:5px solid #cc2200;padding:1.2em;border-radius:4px">
+<p style="color:#aaa;font-size:0.75em;margin:0 0 0.5em 0">FAGDUT — Daniela Díaz, presidenta · marzo 2026</p>
+<p style="color:white;font-style:italic">"Casi mil docentes han dejado las aulas de la UTN a nivel país. Muchos tomaron licencia sin goce de sueldo; los que no tienen antigüedad, directamente renunciaron."</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:0.8em">
+<div style="background:#1a1a2e;border:1px solid #333;padding:0.8em;border-radius:4px">
+<span style="font-size:2em;font-weight:900;color:#cc2200">~1.000</span><br>
+<span style="color:#aaa;font-size:0.8em">docentes que dejaron las aulas en las 30 sedes</span>
+</div>
+<div style="background:#1a1a2e;border:1px solid #333;padding:0.8em;border-radius:4px">
+<span style="font-size:2em;font-weight:900;color:#cc2200">−43%</span><br>
+<span style="color:#aaa;font-size:0.8em">caída real del gasto salarial universitario 2023→2026</span>
+</div>
+<div style="background:#1a1a2e;border:1px solid #333;padding:0.8em;border-radius:4px">
+<span style="font-size:2em;font-weight:900;color:#f39c12">87%</span><br>
+<span style="color:#aaa;font-size:0.8em">del presupuesto universitario son salarios</span>
+</div>
+</div>
+</div>
+
+---
+
+## Los tres reclamos {background-color="#1a1a2e"}
+
+<div style="display:flex;flex-direction:column;gap:1.2em;margin-top:0.5em">
+<div style="display:flex;gap:1.2em;align-items:flex-start">
+<span style="font-size:2em;font-weight:900;color:#4a9eda;min-width:2em">01</span>
+<div><strong style="color:white">Paritaria Nacional Docente</strong><br>
+<span style="color:#aaa">El gobierno nunca la convocó. La Justicia tuvo que obligarlo. Cuando se sentó, no ofreció ningún aumento.</span></div>
+</div>
+<div style="display:flex;gap:1.2em;align-items:flex-start">
+<span style="font-size:2em;font-weight:900;color:#4a9eda;min-width:2em">02</span>
+<div><strong style="color:white">Ley de Financiamiento Universitario</strong><br>
+<span style="color:#aaa">Aprobada por el Congreso. Vetada por Milei. El Congreso la insistió. El Ejecutivo <strong style="color:#cc2200">no la cumplió</strong>.</span></div>
+</div>
+<div style="display:flex;gap:1.2em;align-items:flex-start">
+<span style="font-size:2em;font-weight:900;color:#4a9eda;min-width:2em">03</span>
+<div><strong style="color:white">Presupuesto 2026</strong><br>
+<span style="color:#aaa">Quedaría <strong style="color:#cc2200">36,5% por debajo</strong> de lo que correspondía con la ley aprobada. Mínimo en 20 años.</span></div>
+</div>
+</div>
+
+---
+
+## Calendario de lucha {background-color="#1a1a2e"}
+
+<div style="display:flex;flex-direction:column;gap:0.8em;margin-top:0.5em">
+<div style="display:flex;gap:1em;align-items:center">
+<span style="color:#27ae60;font-size:1.3em">✓</span>
+<span style="color:#888"><strong style="color:#aaa">2 de marzo</strong> — Paro primer día de clases (CTERA + FUDB)</span>
+</div>
+<div style="display:flex;gap:1em;align-items:center">
+<span style="color:#27ae60;font-size:1.3em">✓</span>
+<span style="color:#888"><strong style="color:#aaa">16–21 de marzo</strong> — Paro nacional universitario (semana completa)</span>
+</div>
+<div style="display:flex;gap:1em;align-items:center;background:#2a1a0d;padding:0.6em 1em;border-radius:4px;border-left:4px solid #f39c12">
+<span style="color:#f39c12;font-size:1.3em">→</span>
+<span style="color:white"><strong>30 marzo – 1 abril — PARO ACTIVO AHORA</strong> (CONADU + FAGDUT)</span>
+</div>
+<div style="display:flex;gap:1em;align-items:center">
+<span style="color:#555;font-size:1.3em">○</span>
+<span style="color:#888"><strong style="color:#aaa">1 de abril</strong> — Asamblea de gremios: definen próximas medidas</span>
+</div>
+<div style="display:flex;gap:1em;align-items:center">
+<span style="color:#555;font-size:1.3em">○</span>
+<span style="color:#888"><strong style="color:#aaa">8, 17 y 23 de abril</strong> — Paros no docentes (FATUN)</span>
+</div>
+</div>
+
+---
+
+## ¿Por qué me adhiero? {background-color="#1a1a2e"}
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2em;margin-top:0.5em">
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:6px">
+<p style="font-size:1.5em;margin:0 0 0.3em 0">📉</p>
+<strong style="color:white">Pérdida real y documentada</strong><br>
+<span style="color:#aaa;font-size:0.85em">Los gráficos anteriores lo muestran. El poder adquisitivo cayó entre 43% y 55% en dos años.</span>
+</div>
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:6px">
+<p style="font-size:1.5em;margin:0 0 0.3em 0">⚖️</p>
+<strong style="color:white">El gobierno incumple su propia ley</strong><br>
+<span style="color:#aaa;font-size:0.85em">La ley fue aprobada democráticamente y es ignorada sistemáticamente.</span>
+</div>
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:6px">
+<p style="font-size:1.5em;margin:0 0 0.3em 0">🎓</p>
+<strong style="color:white">Mil colegas ya se fueron</strong><br>
+<span style="color:#aaa;font-size:0.85em">~1.000 renuncias en la UTN no son una estadística. Son docentes que no pudieron sostenerse.</span>
+</div>
+<div style="background:#0d1f2a;border:1px solid #1a3a4a;padding:1.2em;border-radius:6px">
+<p style="font-size:1.5em;margin:0 0 0.3em 0">✊</p>
+<strong style="color:white">El paro es el instrumento disponible</strong><br>
+<span style="color:#aaa;font-size:0.85em">Cuando no hay diálogo real, la medida de fuerza es el mecanismo legal que nos queda.</span>
+</div>
+</div>
+<p style="color:#555;font-size:0.75em;margin-top:0.8em;font-style:italic">Me adhiero porque creo que es lo correcto.</p>
+
+---
+
+## Para pensar... {background-color="#1a1a2e"}
+
+<div style="display:flex;flex-direction:column;justify-content:center;height:480px;gap:2.5em;padding:1em">
+<div style="background:#0d1f2a;border-left:5px solid #4a9eda;padding:1.5em;border-radius:4px">
+<p style="color:#4a9eda;font-size:0.8em;margin:0 0 0.5em 0;letter-spacing:0.1em">PREGUNTA 1</p>
+<p style="color:white;font-size:1.15em;margin:0">¿Qué pasa cuando un sistema expulsa sistemáticamente a sus mejores docentes?</p>
+</div>
+<div style="background:#0d1f2a;border-left:5px solid #f39c12;padding:1.5em;border-radius:4px">
+<p style="color:#f39c12;font-size:0.8em;margin:0 0 0.5em 0;letter-spacing:0.1em">PREGUNTA 2</p>
+<p style="color:white;font-size:1.15em;margin:0">Si el Estado aprueba una ley y después no la cumple — ¿qué valor tiene la ley?</p>
+</div>
+</div>
+
+---
+
+## {background-color="#1a1a2e"}
+
+<div style="display:flex;flex-direction:column;justify-content:center;align-items:center;height:600px;text-align:center;gap:1em">
+<p style="color:#555;font-size:1em">La educación pública no se defiende sola.</p>
+<h2 style="color:white;font-size:2em;margin:0">Me adhiero porque<br><strong style="color:#4a9eda">es justo hacerlo.</strong></h2>
+<p style="color:#666;font-size:0.85em;margin-top:1em">Mientras no haya paritaria real, plan de financiamiento<br>y respeto al salario docente — el conflicto continúa.</p>
+<p style="color:#444;font-size:0.6em;margin-top:2em">Fuentes: FAGDUT · CEPA · CONADU · INDEC · Banco Mundial · Chequeado · El Cronista · Perfil</p>
+</div>
